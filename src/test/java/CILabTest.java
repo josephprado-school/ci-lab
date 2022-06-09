@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CILabTest {
 
@@ -19,13 +20,30 @@ public class CILabTest {
     }
 
     @Test
+    @DisplayName("all caps")
     public void detectCapitalUseTest1() {
-       fail("Not yet implemented");
-
+       myString.setString("THIS IS ALL CAPS");
+       assertTrue(myString.detectCapitalUse());
     }
     @Test
+    @DisplayName("first letter caps")
     public void detectCapitalUseTest2() {
-        fail("Not yet implemented");
+        myString.setString("First letter is caps");
+        assertTrue(myString.detectCapitalUse());
+    }
+
+    @Test
+    @DisplayName("no caps")
+    public void detectCapitalUseTest3() {
+        myString.setString("no letters are caps");
+        assertFalse(myString.detectCapitalUse());
+    }
+
+    @Test
+    @DisplayName("mixed caps")
+    public void detectCapitalUseTest4() {
+        myString.setString("sOme oF tHeSe aRe cApS");
+        assertFalse(myString.detectCapitalUse());
     }
 
 
