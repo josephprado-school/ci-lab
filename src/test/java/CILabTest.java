@@ -36,7 +36,7 @@ public class CILabTest {
     @DisplayName("no caps")
     public void detectCapitalUseTest3() {
         myString.setString("no letters are caps");
-        assertFalse(myString.detectCapitalUse());
+        assertTrue(myString.detectCapitalUse());
     }
 
     @Test
@@ -46,5 +46,17 @@ public class CILabTest {
         assertFalse(myString.detectCapitalUse());
     }
 
+    @Test
+    @DisplayName("empty string")
+    public void detectCapitalUseTest5() {
+        myString.setString("");
+        assertTrue(myString.detectCapitalUse());
+    }
+
+    @Test
+    @DisplayName("null string")
+    public void detectCapitalUseTest6() {
+        assertThrows(NullPointerException.class, () -> myString.detectCapitalUse());
+    }
 
 }
