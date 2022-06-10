@@ -59,4 +59,16 @@ public class CILabTest {
         assertThrows(NullPointerException.class, () -> myString.detectCapitalUse());
     }
 
+    @Test
+    @DisplayName("get string")
+    public void getStringTest1() {
+        myString.setString("Hello");
+        assertEquals("Hello", myString.getString());
+    }
+
+    @Test
+    @DisplayName("get null string")
+    public void getStringTest2() {
+        assertNull(myString.getString());
+    }
 }

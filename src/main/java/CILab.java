@@ -26,7 +26,7 @@ public class CILab implements CILabInterface {
             return true;
 
         String first = myString.substring(0,1).toUpperCase();
-        String remaining = myString.substring(1,myString.length()).toLowerCase();
+        String remaining = myString.substring(1).toLowerCase();
 
         return myString.equals(first + remaining);
     }
